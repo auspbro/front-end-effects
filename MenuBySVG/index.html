@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5菜单特效-使用 SVG 实现菜单</title>
+    <link rel="stylesheet" href="assets/css/menu.css">
+</head>
+<body>
+<div id="menu">
+    <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="menu-inner">
+        <ul>
+            <li>Menu Item</li>
+            <li>Menu Item</li>
+            <li>Menu Item</li>
+            <li>Menu Item</li>
+            <li>Menu Item</li>
+            <li>Menu Item</li>
+        </ul>
+    </div>
+    <svg version="1.1" id="blob"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path id="blob-path" d="M60,500H0V0h60c0,0,20,172,20,250S60,900,60,500z"/>
+    </svg>
+</div>
+
+
+<h2> hover close to the menu </h2>
+<script src="../../Assets/js/jquery-1.11.1.min.js"></script>
+<script src="assets/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: inherit;
+}
+*::after, *::before {
+  box-sizing: inherit;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.bg-red {
+  background-color: #e74c3c !important;
+}
+
+.bg-orange {
+  background-color: #e67e22 !important;
+}
+
+.bg-green {
+  background-color: #2ecc71 !important;
+}
+
+body .password-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  background-color: #3498db;
+}
+body .password-wrapper {
+  width: 80%;
+  max-width: 320px;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+}
+body .password-wrapper .input {
+  border: none;
+  padding: 10px 15px;
+  font: small-caption;
+  font-size: 18px;
+  font-size: 1.8rem;
+  width: calc(100% - 50px);
+  color: #34495e;
+  outline: none;
+  line-height: 1.5;
+}
+body .password-wrapper .icon-wrapper {
+  position: relative;
+  display: inline;
+  float: right;
+  width: 50px;
+  height: 50px;
+  background-color: #34495e;
+  transition: background-color 0.25s ease-out;
+  cursor: pointer;
+}
+body .password-wrapper .icon-wrapper .ion-eye,
+body .password-wrapper .icon-wrapper .ion-more {
+  font-size: 26px;
+  font-size: 2.6rem;
+  position: absolute;
+  top: 11px;
+  right: 12px;
+  color: #ccc;
+  transition: color 0.25s ease-out;
+}
+body .password-wrapper .icon-wrapper .ion-more {
+  right: 14px;
+}
+body .password-wrapper .icon-wrapper:hover {
+  transition: background-color 0.25s ease-out;
+  background-color: #2c3e50;
+}
+body .password-wrapper .icon-wrapper:hover .ion-eye,
+body .password-wrapper .icon-wrapper:hover .ion-more {
+  color: #3498db;
+  transition: color 0.25s ease-in;
+}
+body .password-wrapper .strength-lines {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  width: calc(100% - 50px);
+  height: 6px;
+  z-index: 3;
+}
+body .password-wrapper .strength-lines .line {
+  position: absolute;
+  background-color: transparent;
+  height: 6px;
+  border-radius: 2px;
+  transition: background-color 0.25s ease-in;
+}
+body .password-wrapper .strength-lines .line:not(:first-of-type):not(:last-of-type) {
+  left: 33%;
+  right: 33%;
+}
+body .password-wrapper .strength-lines .line:first-of-type {
+  left: 4px;
+  right: 68%;
+}
+body .password-wrapper .strength-lines .line:last-of-type {
+  left: 68%;
+  right: 4px;
+}

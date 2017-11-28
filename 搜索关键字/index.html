@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索关键字</title>
+    <link rel="stylesheet" href="../../Assets/css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <p class="well" style="margin-top: 20px;">
+            卡里突然转入7万元钱，赵女士一开始觉得是骗局，后来发现确实入账了，又想着快点找到失主。
+
+            <br>（大年三十）中午，家住西安城北的赵女士收到一条短信，称她的银行卡存入7万多元钱，“我以为是骗子，就没在意”，她还和家人开玩笑说骗子花招太多了。由于赵女士的银行卡办了理财，每月会定期有钱转出，几天后钱按时转出了，余额却不太对。
+
+            <br>“我这才发现卡里真的多了7万多元。”赵女士说，她当时就给银行客服打了电话，但客服人员称查不到存入人的信息。她又通过银联查询，查到存入地点为某银行杭州市保俶支行的一个ATM机，但查不到存入账户。
+
+            <br>卡里突然多了7万多元，赵女士并没觉得天上掉馅饼了，“不是自己的钱，心里总是个事”。赵女士说，她查了这么久也没查到，不知该怎么办，就想到了报社，希望能通过报道和网络传播找到失主。
+
+            <br>昨日，华商报记者联系了杭州市公安局北山派出所，民警称辖区确实有一个农行保俶支行，但近期并没有接到存错钱的报警。如果您是那个粗心的失主，或者了解情况，请和华商报联系，尽快物归原主。
+        </p>
+        <div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">Search</button>
+            </span>
+        </div>
+    </div>
+    <script>
+      document.getElementsByTagName("button")[0].onclick = function () {
+          var op = document.getElementsByTagName("p")[0];
+          var searchWord = document.getElementsByTagName("input")[0].value;
+          op.innerHTML = op.innerHTML.split('<span style="background-color: yellow;">').join('').split('</span>').join('');
+          if (searchWord == "") return;
+          op.innerHTML =  op.innerHTML.split(searchWord).join('<span style="background-color: yellow;">'+searchWord+'</span>');
+      }
+    </script>
+</body>
+</html>

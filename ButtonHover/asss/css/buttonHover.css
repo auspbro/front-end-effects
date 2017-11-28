@@ -1,0 +1,88 @@
+:root {
+    --bg: #3C465C;
+    --primary: #78FFCD;
+    --solid: #fff;
+}
+* {box-sizing: border-box;}
+*:before, *:after {box-sizing: border-box;}
+
+body {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    background: var(--bg);
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+}
+h1 {
+    color: var(--solid);
+    font-size: 2.5rem;
+    margin-top: 6rem;
+}
+.btn {
+    position: relative;
+    margin: 0 auto;
+    width: 10em;
+    color: var(--primary);
+    border: .15em solid var(--primary);
+    border-radius: 5em;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 2em;
+    cursor: pointer;
+}
+.dot {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 20%;
+    height: 100%;
+    border-radius: 100%;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    opacity: 0;
+}
+.dot:after {
+    content: '';
+    position: absolute;
+    left: calc(50% - .4em);
+    top: -.4em;
+    height: .8em;
+    width: .8em;
+    background: var(--primary);
+    border-radius: 1em;
+    border: .25em solid var(--solid);
+    box-shadow: 0 0 .7em var(--solid),
+    0 0 2em var(--primary);
+}
+.btn:hover .dot,
+.btn:focus .dot {
+    -webkit-animation: atom 2s infinite linear;
+    animation: atom 2s infinite linear;
+    opacity: 1;
+}
+@-webkit-keyframes atom {
+    0% {-webkit-transform: translateX(0) rotate(0);transform: translateX(0) rotate(0);}
+    25%{-webkit-transform: translateX(400%) rotate(0);transform: translateX(400%) rotate(0);}
+    50% {-webkit-transform: translateX(400%) rotate(180deg);transform: translateX(400%) rotate(180deg);}
+    75% {-webkit-transform: translateX(0) rotate(180deg);transform: translateX(0) rotate(180deg);}
+    100% {-webkit-transform: translateX(0) rotate(360deg);transform: translateX(0) rotate(360deg);}
+}
+@keyframes atom {
+    0% {-webkit-transform: translateX(0) rotate(0);transform: translateX(0) rotate(0);}
+    25%{-webkit-transform: translateX(400%) rotate(0);transform: translateX(400%) rotate(0);}
+    50% {-webkit-transform: translateX(400%) rotate(180deg);transform: translateX(400%) rotate(180deg);}
+    75% {-webkit-transform: translateX(0) rotate(180deg);transform: translateX(0) rotate(180deg);}
+    100% {-webkit-transform: translateX(0) rotate(360deg);transform: translateX(0) rotate(360deg);}
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>iphoneX</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      height: 645px;
+      background: -webkit-radial-gradient(circle, white, #b2b2b2, #919191); /* Safari 5.1 - 6.0 */
+      background: -o-radial-gradient(circle, white, #b2b2b2, #919191); /* Opera 11.6 - 12.0 */
+      background: -moz-radial-gradient(circle, white, #b2b2b2, #919191); /* Firefox 3.6 - 15 */
+      background: radial-gradient(circle, white, #b2b2b2, #919191);
+      cursor: pointer;
+    }
+    
+    .content {
+      position: relative;
+      top: 125px;
+      perspective: 1000px; /* 视距 */
+    }
+    
+    .box {
+      width: 165px;
+      height: 331px;
+      position: relative;
+      color: #fffdf5;
+      /*background: pink;*/
+      margin: 0 auto;
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 200px;
+      transform-style: preserve-3d; /* 默认 2D */
+      transition: transform 1s; /*transform动画效果*/
+      /*不让鼠标选中文字*/
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    .box > div {
+      position: absolute;
+      transition: transform 0.4s; /*transform动画效果*/
+    }
+    
+    .font {
+      width: 165px;
+      height: 331px;
+      background: url("https://store.storeimages.cdn-apple.com/8750/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-gray-select-2017_AV1?wid=165&hei=331&fmt=png-alpha&qlt=95&.v=1503950740410");
+      transform: translateZ(5px);
+    }
+    
+    .back {
+      width: 165px;
+      height: 331px;
+      background: url("https://store.storeimages.cdn-apple.com/8750/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-gray-select-2017_AV2?wid=165&hei=331&fmt=png-alpha&qlt=95&.v=1503950740340");
+      transform: translateZ(-5px) rotateY(180deg);
+    }
+    
+    .left {
+      width: 10px;
+      height: 290px;
+      background: black;
+      border-radius: 1px;
+      transform: rotateY(90deg) translateZ(-3px) translateY(18px);
+    }
+    
+    .right {
+      width: 10px;
+      height: 290px;
+      background: black;
+      border-radius: 1px;
+      transform: rotateY(-90deg) translateZ(-158px) translateY(18px);
+    }
+    
+    .top {
+      width: 10px;
+      height: 130px;
+      background: black;
+      border-radius: 1px;
+      transform: rotateY(-90deg) rotateX(-90deg) translateZ(-64px) translateY(78px);
+    }
+    
+    .bottom {
+      width: 10px;
+      height: 130px;
+      background: black;
+      border-radius: 1px;
+      transform: rotateY(90deg) rotateX(-90deg) translateZ(264px) translateY(-78px);
+    }
+    
+    .white_l_top {
+      display: block;
+      position: absolute;
+      top: 13.5px;
+      width: 10px;
+      height: 2px;
+      /*background: #4a4a4a;*/
+      background: #636363;
+    }
+    
+    .white_l_bottom {
+      position: absolute;
+      display: block;
+      top: 277.5px;
+      width: 10px;
+      height: 2px;
+      background: #636363;
+    }
+    
+    .white_r_top {
+      display: block;
+      position: absolute;
+      top: 13.5px;
+      width: 10px;
+      height: 2px;
+      background: #636363;
+    }
+    
+    .white_r_bottom {
+      position: absolute;
+      display: block;
+      top: 277.5px;
+      width: 10px;
+      height: 2px;
+      background: #636363;
+    }
+    
+    .a1 {
+      width: 10px;
+      height: 10px;
+      background: black;
+      transform: rotateX(90deg) translateZ(-7px) rotateY(-66deg) translateX(-2px);
+    }
+    
+    .a2 {
+      width: 10px;
+      height: 10px;
+      background: black;
+      transform: rotateX(90deg) translateZ(-6px) rotateY(-44deg) translateX(6px);
+    }
+    
+    .a3 {
+      width: 10px;
+      height: 10px;
+      background: black;
+      transform: rotateX(90deg) translateZ(-3px) rotateY(-26deg) translateX(11px);
+    }
+    
+    .b1 {
+      width: 10px;
+      height: 10px;
+      background: black;
+      transform: rotateX(90deg) translateZ(14px) rotateY(5deg) translateX(147px) rotateY(28deg);
+    }
+    
+    .b2 {
+      width: 10px;
+      height: 10px;
+      background: black;
+      transform: rotateX(90deg) translateZ(14px) rotateY(6deg) translateX(152px) rotateY(37deg);
+    }
+    
+    .b3 {
+      width: 10px;
+      height: 10px;
+      background: black;
+      transform: rotateX(90deg) translateZ(7px) rotateY(6deg) translateX(157px) rotateY(63deg);
+    }
+    
+    .c1 {
+      width: 11px;
+      height: 10px;
+      background: black;
+      transform: rotateX(90deg) translateZ(-214px) rotateY(31deg) translateX(182px) rotateY(75deg);
+    }
+    
+    .c2 {
+      width: 10px;
+      height: 10px;
+      background: black;
+      transform: rotateX(90deg) translateZ(-204px) rotateY(36deg) translateX(189px) rotateY(89deg);
+    }
+    
+    .c3 {
+      width: 10px;
+      height: 10px;
+      background: black;
+      transform: rotateX(90deg) translateZ(-203px) rotateY(39deg) translateX(188px) rotateY(112deg);
+    }
+    
+    .d1 {
+      width: 10px;
+      height: 10px;
+      background: black;
+      transform: rotateX(90deg) translateZ(-245px) rotateY(91deg) translateX(62px) rotateY(158deg);
+    }
+    
+    .d2 {
+      width: 11px;
+      height: 10px;
+      background: black;
+      transform: rotateX(90deg) translateZ(-231px) rotateY(88deg) translateX(84px) rotateY(147deg);
+    }
+    
+    .d3 {
+      width: 10px;
+      height: 10px;
+      background: black;
+      transform: rotateX(90deg) translateZ(-233px) rotateY(84deg) translateX(89px) rotateY(124deg);
+    }
+  
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+
+
+<div class="content">
+  <div class="box">
+    <div class="font"></div>
+    <div class="back"></div>
+    <div class="right"><span class='white_r_top'></span><span class='white_r_bottom'></span></div>
+    <div class="left"><span class='white_l_top'></span><span class='white_l_bottom'></span></div>
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="a1"></div>
+    <div class="a2"></div>
+    <div class="a3"></div>
+    <div class="b1"></div>
+    <div class="b2"></div>
+    <div class="b3"></div>
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+  
+  </div>
+</div>
+
+
+</body>
+</html>
+<script>
+  //角度初始化
+  var RotateY = 0;
+  var RotateX = 0;
+
+  $('.box').children().mouseenter(function () {   //box 的所有子元素
+    $(this).css({cursor: 'pointer'});
+  });
+
+  var flag = false;
+  var old_x = 0;
+  var old_y = 0;
+  document.onmousedown = function (e) {
+    flag = true;
+    old_x = e.pageX;
+    old_y = e.pageY;
+    //console.log(old_x, old_y);
+    /*原本所处的位置*/
+  }
+  document.onmouseup = function () {
+    flag = false;
+    //鼠标抬起时结束
+  };
+  document.onmousemove = function (e) {
+    if (flag) {
+      var _x = e.pageX - old_x;
+      var _y = e.pageY - old_y;
+      /*新位置减去老位置*/
+      console.log(_x, _y);
+      RotateY += _x / 70;
+      RotateX += -(_y / 70);
+      $('.box').css({
+        transition: 'linear',
+        transform: 'rotateX(' + RotateX + 'deg) rotateY(' + RotateY + 'deg)'
+      });
+    }
+  };
+
+
+</script>

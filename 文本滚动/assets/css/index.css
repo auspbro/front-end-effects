@@ -1,0 +1,28 @@
+body{background-color: aliceblue}
+.tricker {
+    height: 50px;
+    overflow: hidden;
+    margin: 100px auto 20px;
+}
+.tricker h2 {
+    color: #333;
+    margin: 0;
+    height: 50px;
+    line-height: 50px;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: margin-top .3s ease;
+}
+.subline {
+    width: 100px;
+    height: 2px;
+    margin: 10px auto;
+    background-color: #181818;
+}
+p {
+    text-align: center;
+    line-height: 26px;
+    color: #676665;
+    font-size: 18px;
+}

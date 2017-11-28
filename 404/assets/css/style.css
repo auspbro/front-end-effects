@@ -1,0 +1,64 @@
+:root {
+  --translateX: 0;
+  --translateY: 0;
+}
+
+*{
+    box-sizing: border-box;
+     -webkit-animation: fadeIn 0.5s;
+          animation: fadeIn 0.5s;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  margin: 0;
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.channel {
+  color: #008000;
+  font-size: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+}
+.fourofour {
+  margin: 0;
+  padding: 0;
+  font-size: 175px;
+  opacity: 0.1;
+  --X: calc(var(--translateX) * -100px);
+  --Y: calc(var(--translateY) * -150px);
+  -webkit-transform: translate(var(--X), var(--Y));
+          transform: translate(var(--X), var(--Y));
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Border 样式</title>
+    <style>
+        .border{
+  border:1px solid lightblue;
+  width:200px;
+  height:40px;
+  position: absolute;
+  text-align: center;
+  line-height: 40px;
+}
+
+.border:before{
+    content: '';
+    position: absolute;
+    top: -1px;
+    bottom:-1px;
+    left: 10%;
+    width: 80%;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+.border:after{
+    content: '';
+    position: absolute;
+    left: -1px;
+    right:-1px;
+    top: 25%;
+    height: 45%;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+    </style>
+</head>
+<body>
+    <div class="border">使用伪样式实现Border</div>
+</body>
+</html>

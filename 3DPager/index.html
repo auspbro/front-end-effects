@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            background: #edf2f4;
+            -webkit-perspective: 1000px;
+            perspective: 1000px;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            height: 100vh;
+            font-family: "Playfair Display",georgia,serif;
+        }
+
+        .card {
+            pointer-events: none;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            padding: 30px;
+            background: white;
+            border-radius: 5px;
+            width: 400px;
+            height: 200px;
+            margin: auto;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .card:after {
+            content: " ";
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            border-radius: 50%;
+            left: 0;
+            bottom: -50px;
+            box-shadow: 0 30px 20px rgba(0, 0, 0, 0.3);
+        }
+        .card .card-content {
+            margin: auto;
+            text-align: center;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+        .card h1 {
+            -webkit-transform: translateZ(100px);
+            transform: translateZ(100px);
+        }
+        .card p {
+            -webkit-transform: translateZ(50px);
+            transform: translateZ(50px);
+            display: block;
+        }
+        .card p.related {
+            -webkit-transform: translateZ(80px);
+            transform: translateZ(80px);
+            font-style: italic;
+        }
+        .card a {
+            color: #69c6b8;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-content">
+            <h1>Just hover around</h1>
+            <p class="related"><strong>See also: </strong> Staged dropdown animation </p>
+        </div>
+    </div>
+    <script src="../../Assets/js/jquery-1.11.1.min.js"></script>
+    <script>
+        var card = $(".card");
+
+        $(document).on("mousemove", function(e) {
+            var ax = -($(window).innerWidth() / 2 - e.pageX) / 20;
+            var ay = ($(window).innerHeight() / 2 - e.pageY) / 10;
+            card.attr("style", "transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-webkit-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-moz-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg)");
+        });
+    </script>
+</body>
+</html>

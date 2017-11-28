@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+}
+body li, body .close-button {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    text-transform: capitalize;
+}

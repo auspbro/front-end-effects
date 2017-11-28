@@ -1,0 +1,87 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to left, #c0c0aa , #1ce);
+}
+
+h1 {
+    background: #2980b9;
+    color: white;
+    margin: 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+h1 i {
+    float: right;
+    cursor: pointer;
+}
+
+#container {
+    width: 360px;
+    margin: 100px auto;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    background: #f7f7f7;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#container li {
+    cursor: pointer;
+    background: white;
+    height: 40px;
+    line-height: 40px;
+    color: #666;
+}
+
+#container li:nth-child(2n) {
+    background: #f7f7f7;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+input {
+    font-size: 18px;
+    background-color: #f7f7f7;
+    width: 100%;
+    padding: 13px 13px 13px 20px;
+    box-sizing: border-box;
+    color: #2980b9;
+    border: 3px solid rgba(0,0,0,0);
+
+}
+
+.slide {
+    display: none;
+}
+
+input:focus{
+    background: white;
+    outline: none;
+    border: 3px solid #2980b9;
+}
+
+li span {
+    background: #e74c3c;
+    color: white;
+    height: 40px;
+    display: inline-block;
+    margin-right: 20px;
+    width: 0;
+    transition: all .5s;
+    text-align: center;
+    opacity: 0;
+}
+
+li:hover span {
+    width: 40px;
+    opacity: 1;
+}

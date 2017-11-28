@@ -1,0 +1,48 @@
+*{padding:0;margin:0; font-family: "Proxima Nova","proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif !important;}
+html body{height: 100%;width: 100%; overflow: hidden; cursor:url('../../../../Assets/img/1_1.cur'),auto;}
+
+/*.well > div.card{*/
+    /*width: 200px;*/
+    /*height:200px;*/
+    /*line-height: 200px;*/
+    /*text-align: center;*/
+    /*margin: 10px auto;*/
+    /*background: lightblue;*/
+    /*color: #FFFFFF;*/
+    /*-webkit-transform: perspective(800px) rotateX(0deg);*/
+    /*-moz-transform: perspective(800px) rotateX(0deg);*/
+    /*-ms-transform: perspective(800px) rotateX(0deg);*/
+    /*-o-transform: perspective(800px) rotateX(0deg);*/
+    /*transform: perspective(800px) rotateX(0deg);*/
+    /*-webkit-transform-origin:0 0;*/
+    /*-moz-transform-origin:0 0;*/
+    /*-ms-transform-origin:0 0;*/
+    /*-o-transform-origin:0 0;*/
+    /*transform-origin:0 0;*/
+/*}*/
+
+.box{
+    width:140px;
+    height: 200px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+    -moz-transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+    -ms-transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+    -o-transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+    transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+    position:relative;
+    margin:90px auto;
+}
+.box span{
+    width: 140px;
+    height:200px;
+    position: absolute;
+    background: deepskyblue;
+    color: #FFFFFF;
+    font-size:20px;
+    line-height: 200px;
+    text-align: center;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class=" -webkit-"><head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="https://production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+    <link rel="mask-icon" type="" href="https://production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+    <meta name="robots" content="noindex">
+    <title>CodePen - Canvas Color Smoke</title>
+
+
+    <style media="" data-href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}</style>
+
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        canvas {
+            background: #000;
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+
+
+</head>
+
+<body translate="no">
+
+<canvas id="c" width="156" height="126"></canvas>
+
+<script src="../../Assets/js/jquery-1.11.1.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+
+<script>
+    (function() {
+        var Blip, blips, c, ch, clear, ctx, cw, divider, globalTick, initialBlips, pi2, rand, run;
+
+        c = document.getElementById('c');
+
+        ctx = c.getContext('2d');
+
+        divider = 4;
+
+        cw = c.width = window.innerWidth / divider;
+
+        ch = c.height = window.innerHeight / divider;
+
+        pi2 = Math.PI * 2;
+
+        blips = [];
+
+        initialBlips = 30;
+
+        globalTick = 0;
+
+        rand = function(min, max) {
+            return Math.floor((Math.random() * (max - min + 1)) + min);
+        };
+
+        Blip = function(x, y) {
+            this.x = x;
+            this.y = y;
+            this.r = .1;
+            this.rGrowthBase = 1;
+            this.rGrowth = this.rGrowthBase;
+            this.rMax = (cw + ch) / 7;
+            return this.alpha = 1;
+        };
+
+        Blip.prototype.update = function(i) {
+            var percent;
+            percent = (this.rMax - this.r) / this.rMax;
+            this.rGrowth = .1 + this.rGrowthBase * percent;
+            this.r += this.rGrowth;
+            this.alpha = percent;
+            if (this.r > this.rMax) {
+                return blips.splice(i, 1);
+            }
+        };
+
+        Blip.prototype.render = function(i) {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.r, 0, pi2, false);
+            ctx.fillStyle = 'hsla(' + rand(globalTick - 80, globalTick + 80) + ', 50%, 1%, ' + this.alpha + ')';
+            return ctx.fill();
+        };
+
+        clear = function() {
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.fillStyle = 'hsla(0, 0%, 0%, .05)';
+            ctx.fillRect(0, 0, cw, ch);
+            return ctx.globalCompositeOperation = 'lighter';
+        };
+
+        run = function() {
+            var i;
+            window.requestAnimationFrame(run, c);
+            clear();
+            i = blips.length;
+            while (i--) {
+                blips[i].update(i);
+            }
+            i = blips.length;
+            while (i--) {
+                blips[i].render(i);
+            }
+            blips.push(new Blip(rand(0, cw), rand(0, ch)));
+            return globalTick++;
+        };
+
+        $(window).on('resize', function() {
+            cw = c.width = window.innerWidth / divider;
+            return ch = c.height = window.innerHeight / divider;
+        });
+
+        window.requestAnimationFrame || (window.requestAnimationFrame = window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback, element) {
+                return window.setTimeout(function() {
+                    return callback(+new Date());
+                }, 1000 / 60);
+            });
+
+        run();
+
+    }).call(this);
+</script>
+
+
+
+
+
+
+
+</body></html>

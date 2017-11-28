@@ -1,0 +1,182 @@
+html, body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+html .item, body .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 100px;
+  min-height: 100px;
+  border: 1px solid rgba(189, 195, 199, 0.2);
+  margin: 15px;
+  padding: 0 10px;
+}
+
+html .item div, body .item div {
+  margin-top: 20px;
+}
+
+
+.switch label {
+  display: block;
+  width: 44px;
+  height: 16px;
+  border-radius: 10px;
+  background: rgba(189, 195, 199, 0.5);
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: background 350ms ease;
+  transition: background 350ms ease;
+}
+.switch label:before, .switch label:after {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+}
+.switch label:before {
+  background: rgba(189, 195, 199, 0.07);
+  -webkit-transform: translate3d(0, -50%, 0) scale(0);
+          transform: translate3d(0, -50%, 0) scale(0);
+}
+.switch label:after {
+  background: #bdc3c7;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+}
+.switch input:checked + label {
+  background: rgba(142, 68, 173, 0.6);
+}
+.switch input:checked + label:before {
+  background: rgba(142, 68, 173, 0.07);
+  -webkit-transform: translate3d(100%, -50%, 0) scale(1);
+          transform: translate3d(100%, -50%, 0) scale(1);
+}
+.switch input:checked + label:after {
+  background: #8e44ad;
+  -webkit-transform: translate3d(100%, -50%, 0);
+          transform: translate3d(100%, -50%, 0);
+}
+
+/* _______________________________________________________ */
+.checkbox input[type="checkbox"] {
+  position: relative;
+  margin: 0 10px;
+}
+.checkbox input[type="checkbox"]:before {
+  border: 2px solid transparent;
+  content: "";
+  cursor: pointer;
+  display: block;
+  height: 17px;
+  position: absolute;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  width: 17px;
+  z-index: 1;
+}
+.checkbox input[type="checkbox"]:checked:before {
+  border-color: #8e44ad;
+  border-top-style: none;
+  border-right-style: none;
+  height: 10px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.checkbox input[type="checkbox"]:after {
+  background: #FFFFFF;
+  content: "";
+  display: block;
+  height: 17px;
+  position: absolute;
+  border: 2px solid rgba(189, 195, 199, 0.5);
+  top: 0;
+  width: 17px;
+  z-index: 0;
+}
+
+/* _______________________________________________________ */
+.radio label {
+  display: inline-block;
+  cursor: pointer;
+}
+.radio label:hover .inner {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  opacity: 0.5;
+}
+.radio label input {
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.radio label input:checked + .outer .inner {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+.radio label input:checked + .outer {
+  border: 3px solid #8e44ad;
+}
+.radio label input:focus + .outer .inner {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+  background-color: #8e44ad;
+}
+.radio label .outer {
+  width: 20px;
+  height: 20px;
+  display: block;
+  float: left;
+  margin: 0 5px;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+  border: 3px solid rgba(189, 195, 199, 0.5);
+  border-radius: 50%;
+  background-color: #fff;
+}
+.radio label .outer .inner {
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+  width: 14px;
+  height: 14px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  display: block;
+  margin: 3px;
+  border-radius: 50%;
+  background-color: #8e44ad;
+  opacity: 0;
+}
