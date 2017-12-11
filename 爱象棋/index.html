@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="./css/api.css" />
+		<link rel="stylesheet" type="text/css" href="./css/aui/aui-win.min.css" />
+		<style type="text/css">
+		</style>
+	</head>
+	<body></body>
+	<script type="text/javascript" src="./script/api.js"></script>
+	<script type="text/javascript">
+		// 解决状态栏重合，并优化fixStatusBar代码,Android4.4版本以上添加25px
+		function fixStatusBar(headerid, callback) {
+			var header = $api.byId(headerid);
+			var systemType = api.systemType;
+			var systemVersion = parseFloat(api.systemVersion);
+			if (systemType == "ios" || (systemType == "android" && systemVersion >= 4.4)) {
+				if (systemType == "android") {
+					header.style.paddingTop = '25px';
+				}
+				$api.fixStatusBar(header);
+			} else {
+				$api.fixIos7Bar(header);
+			}
+			var headerPos = $api.offset(header);
+			if ( typeof callback == "function") {
+				callback(headerPos);
+			}
+		}
+
+		apiready = function() {
+			api.openFrame({
+				name : 'main',
+				url : './html/main.html',
+				rect : {
+					x : 0,
+					y : 0,
+					w : api.winWidth,
+					h : api.winHeight
+				},
+				pageParam : {
+				},
+				bounces : false,
+				bgColor : 'rgba(0,0,0,0)',
+				vScrollBarEnabled : false,
+				hScrollBarEnabled : false
+			});
+		};
+	</script>
+</html>

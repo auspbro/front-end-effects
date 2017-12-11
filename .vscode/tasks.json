@@ -1,5 +1,15 @@
+// {
+//     "version": "0.1.0",
+//     "command": "open",
+//     "args": ["-a", "Google Chrome.app", "${file}"],
+// }
+
+
 {
     "version": "0.1.0",
-    "command": "open",
-    "args": ["-a", "Google Chrome.app", "${file}"],
+    "command": "explorer",    
+    "windows": {
+        "command": "explorer.exe"
+    },
+    "args": ["${file}"]
 }

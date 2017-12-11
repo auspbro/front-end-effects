@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../css/aui/aui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/zzsc.css" />
+		<style>
+			body {
+				padding-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<div class="chess_left">
+				<canvas id="chess"></canvas>
+				<audio src="../res/click.wav" id="clickAudio" preload="auto"></audio>
+				<audio src="../res/select.wav" id="selectAudio" preload="auto"></audio>
+				<div>
+					<div class="bn_box" id="bnBox">
+						<input type="button" name="offensivePlay" id="tyroPlay" value="新手" class="aui-btn aui-btn-warning" />
+						<input type="button" name="offensivePlay" id="superPlay" value="中级"  class="aui-btn aui-btn-warning" />
+						<input type="button" name="button" id="" value="大师水平" disabled  class="aui-btn aui-btn-warning" style="display:none"/>
+						<input type="button" name="regret" id="regretBn" value="悔棋"  class="aui-btn aui-btn-warning"  />
+						<input type="button" name="billBn" id="billBn" value="棋谱" class="bn_box"  class="aui-btn aui-btn-warning" style="display:none" />
+						<input type="button" name="stypeBn" id="stypeBn" value="换肤"  class="aui-btn aui-btn-warning" style="display:none" />
+					</div>
+				</div>
+			</div>
+			<div class="chess_right" id="chessRight">
+				<select name="billList" id="billList"></select>
+				<ol id="billBox" class="bill_box"></ol>
+			</div>
+			<div id="moveInfo" class="move_info"></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript" src="../script/common.js"></script>
+	<script type="text/javascript" src="../script/play.js"></script>
+	<script type="text/javascript" src="../script/AI.js"></script>
+	<script type="text/javascript" src="../script/bill.js"></script>
+	<script type="text/javascript" src="../script/gambit.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+		};
+	</script>
+</html>
